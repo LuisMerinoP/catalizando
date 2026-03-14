@@ -12,6 +12,7 @@ const pool = mysql.createPool({
   user: 'root',
   password: 'Astrain948!',
   database: 'panamacats',
+  charset: 'utf8mb4',
   waitForConnections: true,
   connectionLimit: 5,
 });
