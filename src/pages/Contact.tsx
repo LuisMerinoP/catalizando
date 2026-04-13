@@ -89,12 +89,12 @@ export default function Contact() {
           <div>
             <h2 className="text-2xl font-bold text-primary mb-6">Our Office</h2>
             <div className="bg-gray-light rounded-xl p-8 space-y-5">
-              <h3 className="font-semibold text-lg text-primary">Your Company Name, Inc.</h3>
+              <h3 className="font-semibold text-lg text-primary">SIUL Recycling, Inc.</h3>
               <ul className="space-y-4 text-sm text-gray-600">
                 <li className="flex items-start gap-3">
                   <MapPin size={18} className="mt-0.5 shrink-0 text-secondary" />
                   <span>
-                    <strong>Panamacats Corp.</strong><br />
+                    <strong>SIUL Recycling Corp.</strong><br />
                     Vía España Nº122, Torre Delta, Piso 14<br />
                     Apartado 0823-05658<br />
                     Panamá, República de Panamá
@@ -110,7 +110,7 @@ export default function Contact() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail size={18} className="shrink-0 text-secondary" />
-                  <span>webmaster@panamacats.com</span>
+                  <span>info@siulrecycling.com</span>
                 </li>
               </ul>
             </div>

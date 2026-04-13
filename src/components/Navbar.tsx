@@ -19,8 +19,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-3 text-2xl md:text-3xl font-bold">
-            <Logo className="h-10 w-10 text-white" />
-            <span>PANAMA<span className="text-secondary">CATS</span></span>
+            <Logo className="h-12 w-auto" />
+            <span>SIUL<span className="text-secondary">RECYCLING</span></span>
           </Link>
 
           {/* Desktop nav */}

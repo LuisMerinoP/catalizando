@@ -75,5 +75,5 @@ app.get('*', (_req, res) => {
 });
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log('PanamaCats running on 0.0.0.0:' + PORT);
+  console.log('SIUL Recycling running on 0.0.0.0:' + PORT);
 });

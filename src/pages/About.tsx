@@ -13,10 +13,10 @@ export default function About() {
       {/* Introduction */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <img src="/panamacats.png" alt="PanamaCats logo" className="w-48 h-48 mx-auto mb-8 object-contain" />
+          <img src="/siulrecycling.png" alt="SIUL Recycling logo" className="max-w-md w-full mx-auto mb-8 object-contain" />
           <h2 className="text-3xl font-bold text-primary mb-6">Who We Are</h2>
           <p className="text-gray-600 leading-relaxed text-lg">
-            At Your Company Name, we are dedicated to supplying recyclable metals to different
+            At SIUL Recycling, we are dedicated to supplying recyclable metals to different
             industries around the world. We specialize in the urban extraction of metals,
             providing sustainable solutions that benefit both our clients and the environment.
             Founded with a vision to lead the international recycling industry, we have grown

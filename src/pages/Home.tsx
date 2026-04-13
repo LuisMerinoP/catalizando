@@ -8,7 +8,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <HeroSection
-        title="PANAMACATS — Experts in Recycling"
+        title="SIUL RECYCLING — Sustainable Solutions, Global Reach"
         subtitle="We purchase used catalytic converters and non-ferrous metals. Get in touch with us today for a competitive quote."
         ctaText="Contact Us"
         ctaLink="/contact"
@@ -21,7 +21,7 @@ export default function Home() {
             Our Limit Is the Sky
           </h2>
           <p className="mt-6 text-gray-600 leading-relaxed">
-            At PANAMACATS, we believe in the circular economy. Every material we recover
+            At SIUL RECYCLING, we believe in the circular economy. Every material we recover
             is a step toward reducing waste and preserving our planet's precious resources
             for future generations.
           </p>
@@ -41,7 +41,7 @@ export default function Home() {
             We Operate Across Multiple Regions
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            PANAMACATS buys and processes materials in multiple countries and regions,
+            SIUL RECYCLING buys and processes materials in multiple countries and regions,
             serving clients around the globe with reliable recycling services.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 mt-12">

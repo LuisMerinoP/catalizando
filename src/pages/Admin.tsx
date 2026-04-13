@@ -11,7 +11,7 @@ interface Visit {
   todo: string;
 }
 
-const AUTH_KEY = 'panamacats_admin_auth';
+const AUTH_KEY = 'siulrecycling_admin_auth';
 const API = '/api/visits';
 
 const ADMIN_USER = 'Catalizandoando';

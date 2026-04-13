@@ -1,6 +1,6 @@
 {
-  "name": "PanamaCats - Experts in Recycling",
-  "short_name": "PanamaCats",
+  "name": "SIUL Recycling - Experts in Recycling",
+  "short_name": "SIUL Recycling",
   "description": "Catalytic converter and non-ferrous metal recycling",
   "start_url": "/",
   "display": "standalone",
@@ -9,7 +9,7 @@
   "orientation": "any",
   "icons": [
     {
-      "src": "/panamacats.png",
+      "src": "/siulrecycling.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

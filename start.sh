@@ -1,8 +1,8 @@
 #!/bin/sh
 NODE=/volume1/@appstore/Node.js_v12/usr/local/bin/node
-PIDFILE=/volume1/server/panamacats/pid.txt
-LOGFILE=/volume1/server/panamacats/server.log
-DIR=/volume1/server/panamacats
+PIDFILE=/volume1/server/siulrecycling/pid.txt
+LOGFILE=/volume1/server/siulrecycling/server.log
+DIR=/volume1/server/siulrecycling
 
 # Kill old process if running
 if [ -f "$PIDFILE" ]; then

@@ -1,8 +1,8 @@
-const CACHE_NAME = 'panamacats-v1';
+const CACHE_NAME = 'siulrecycling-v1';
 const STATIC_ASSETS = [
   '/',
   '/manifest.json',
-  '/panamacats.png',
+  '/siulrecycling.png',
 ];
 
 self.addEventListener('install', (event) => {
