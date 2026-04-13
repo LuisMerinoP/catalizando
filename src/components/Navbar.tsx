@@ -2,17 +2,43 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
-
-const navLinks = [
-  { to: '/about', label: 'About Us' },
-  { to: '/catalytic-converters', label: 'Catalytic Converters' },
-  { to: '/non-ferrous-metals', label: 'Non-Ferrous Metals' },
-  { to: '/contact', label: 'Contact Us' },
-];
+import { useT } from '../i18n/LanguageContext';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const { t, lang, setLang } = useT();
+
+  const navLinks = [
+    { to: '/about', label: t.nav.about },
+    { to: '/catalytic-converters', label: t.nav.catalytic },
+    { to: '/non-ferrous-metals', label: t.nav.nonFerrous },
+    { to: '/contact', label: t.nav.contact },
+  ];
+
+  const LangToggle = (
+    <div className="flex items-center gap-2 text-xs">
+      <button
+        type="button"
+        onClick={() => setLang('es')}
+        className={`font-semibold transition-colors ${
+          lang === 'es' ? 'text-secondary' : 'text-white/60 hover:text-white'
+        }`}
+      >
+        ES
+      </button>
+      <span className="text-white/60">|</span>
+      <button
+        type="button"
+        onClick={() => setLang('en')}
+        className={`font-semibold transition-colors ${
+          lang === 'en' ? 'text-secondary' : 'text-white/60 hover:text-white'
+        }`}
+      >
+        EN
+      </button>
+    </div>
+  );
 
   return (
     <header className="bg-primary text-white sticky top-0 z-50 shadow-lg">
@@ -36,21 +62,20 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <div className="flex items-center gap-2 ml-4 text-xs border-l border-white/30 pl-4">
-              <span className="font-semibold text-secondary">EN</span>
-              <span className="text-white/60">|</span>
-              <span className="text-white/60 cursor-pointer hover:text-white">ES</span>
-            </div>
+            <div className="ml-4 border-l border-white/30 pl-4">{LangToggle}</div>
           </nav>
 
           {/* Mobile menu button */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden text-white p-2"
-            aria-label="Toggle menu"
-          >
-            {open ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-4 md:hidden">
+            {LangToggle}
+            <button
+              onClick={() => setOpen(!open)}
+              className="text-white p-2"
+              aria-label="Toggle menu"
+            >
+              {open ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile nav */}

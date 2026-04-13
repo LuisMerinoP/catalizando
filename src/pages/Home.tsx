@@ -2,48 +2,66 @@ import { Link } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import StatCard from '../components/StatCard';
 import { Leaf, Globe, Recycle } from 'lucide-react';
+import { useT } from '../i18n/LanguageContext';
 
 export default function Home() {
+  const { t } = useT();
+
   return (
     <>
-      {/* Hero */}
       <HeroSection
-        title="SIUL RECYCLING — Sustainable Solutions, Global Reach"
-        subtitle="We purchase used catalytic converters and non-ferrous metals. Get in touch with us today for a competitive quote."
-        ctaText="Contact Us"
+        title={t.home.hero.title}
+        subtitle={t.home.hero.subtitle}
+        ctaText={t.home.hero.cta}
         ctaLink="/contact"
       />
 
-      {/* Sustainability */}
+      {/* Purpose */}
       <section className="py-20 bg-gray-light text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-primary uppercase">
-            Our Limit Is the Sky
+            {t.home.purpose.title}
           </h2>
-          <p className="mt-6 text-gray-600 leading-relaxed">
-            At SIUL RECYCLING, we believe in the circular economy. Every material we recover
-            is a step toward reducing waste and preserving our planet's precious resources
-            for future generations.
-          </p>
+          <p className="mt-6 text-gray-600 leading-relaxed">{t.home.purpose.body}</p>
           <Link
             to="/about"
             className="inline-block mt-8 bg-primary hover:bg-primary-light text-white font-semibold py-3 px-8 rounded-lg transition-colors uppercase tracking-wide"
           >
-            Be Part of the Change
+            {t.home.purpose.cta}
           </Link>
         </div>
       </section>
 
-      {/* Service Area */}
+      {/* Services */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary">
-            We Operate Across Multiple Regions
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12">
+            {t.home.services.title}
           </h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            SIUL RECYCLING buys and processes materials in multiple countries and regions,
-            serving clients around the globe with reliable recycling services.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-gray-light rounded-xl p-8">
+              <Recycle size={40} className="text-secondary mb-4" />
+              <h3 className="text-xl font-bold text-primary mb-3">
+                {t.home.services.catalytic.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">{t.home.services.catalytic.body}</p>
+            </div>
+            <div className="bg-gray-light rounded-xl p-8">
+              <Globe size={40} className="text-secondary mb-4" />
+              <h3 className="text-xl font-bold text-primary mb-3">
+                {t.home.services.nonFerrous.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">{t.home.services.nonFerrous.body}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Regions */}
+      <section className="py-20 bg-gray-light">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary">{t.home.regions.title}</h2>
+          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">{t.home.regions.subtitle}</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 mt-12">
             {[
               { name: 'Panamá', flag: '🇵🇦' },
@@ -56,7 +74,7 @@ export default function Home() {
             ].map((region) => (
               <div
                 key={region.name}
-                className="bg-gray-light rounded-xl p-8 flex flex-col items-center justify-center h-40 gap-3"
+                className="bg-white rounded-xl p-8 flex flex-col items-center justify-center h-40 gap-3"
               >
                 <span className="text-5xl">{region.flag}</span>
                 <span className="text-gray-600 font-medium">{region.name}</span>
@@ -66,21 +84,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing info */}
+      {/* Pricing */}
       <section className="py-16 bg-primary text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold">
-            Prices Change Daily
-          </h2>
-          <p className="mt-4 text-white/80">
-            Prices for used catalytic converters and non-ferrous metals fluctuate every day
-            based on market conditions. Contact our advisors for the most up-to-date quote.
-          </p>
+          <h2 className="text-2xl md:text-3xl font-bold">{t.home.pricing.title}</h2>
+          <p className="mt-4 text-white/80">{t.home.pricing.body}</p>
           <Link
             to="/contact"
             className="inline-block mt-6 bg-secondary hover:bg-secondary/90 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
           >
-            Get a Quote
+            {t.home.pricing.cta}
           </Link>
         </div>
       </section>
@@ -93,31 +106,39 @@ export default function Home() {
             className="group block bg-primary text-white rounded-xl p-10 text-center hover:bg-primary-light transition-colors"
           >
             <Recycle size={48} className="mx-auto mb-4 group-hover:scale-110 transition-transform" />
-            <h3 className="text-xl font-bold uppercase">Catalytic Converters</h3>
-            <p className="mt-2 text-white/70 text-sm">Learn about our catalyst recycling services</p>
+            <h3 className="text-xl font-bold uppercase">{t.nav.catalytic}</h3>
+            <p className="mt-2 text-white/70 text-sm">{t.home.productLinks.catalyticDesc}</p>
           </Link>
           <Link
             to="/non-ferrous-metals"
             className="group block bg-primary text-white rounded-xl p-10 text-center hover:bg-primary-light transition-colors"
           >
             <Globe size={48} className="mx-auto mb-4 group-hover:scale-110 transition-transform" />
-            <h3 className="text-xl font-bold uppercase">Non-Ferrous Metals</h3>
-            <p className="mt-2 text-white/70 text-sm">Explore our metal recovery solutions</p>
+            <h3 className="text-xl font-bold uppercase">{t.nav.nonFerrous}</h3>
+            <p className="mt-2 text-white/70 text-sm">{t.home.productLinks.nonFerrousDesc}</p>
           </Link>
         </div>
       </section>
 
-      {/* Sustainability Goals */}
-      <section className="py-16 bg-gray-light">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-10">
-            Aligned with UN Sustainability Goals
+      {/* Impact */}
+      <section className="py-20 bg-gray-light">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+            {t.home.impact.title}
           </h2>
+          <p className="text-gray-600 leading-relaxed">{t.home.impact.body}</p>
+        </div>
+      </section>
+
+      {/* SDG */}
+      <section className="py-16">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-10">{t.home.sdg.title}</h2>
           <div className="flex justify-center gap-8 md:gap-16 flex-wrap">
             {[
-              { icon: <Leaf size={40} />, label: 'Clean Water & Sanitation', goal: 'SDG 6' },
-              { icon: <Globe size={40} />, label: 'Sustainable Cities', goal: 'SDG 11' },
-              { icon: <Recycle size={40} />, label: 'Responsible Consumption', goal: 'SDG 12' },
+              { icon: <Leaf size={40} />, label: t.home.sdg.sdg6, goal: 'ODS 6' },
+              { icon: <Globe size={40} />, label: t.home.sdg.sdg11, goal: 'ODS 11' },
+              { icon: <Recycle size={40} />, label: t.home.sdg.sdg12, goal: 'ODS 12' },
             ].map((item) => (
               <div key={item.goal} className="flex flex-col items-center gap-2 text-primary">
                 {item.icon}
@@ -129,23 +150,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Impact Stats */}
+      {/* Stats */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-primary text-center mb-12">Our Impact</h2>
+          <h2 className="text-3xl font-bold text-primary text-center mb-4">{t.home.stats.title}</h2>
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            {t.home.stats.subtitle}
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <StatCard number="80,000+" label="Recycled Catalytic Converters" />
-            <StatCard number="7+" label="Countries Impacted" />
-            <StatCard number="80,000+" label="Tons of Non-Ferrous Materials" />
+            <StatCard number="80,000+" label={t.home.stats.converters} />
+            <StatCard number="7+" label={t.home.stats.countries} />
+            <StatCard number="80,000+" label={t.home.stats.tons} />
           </div>
         </div>
       </section>
 
-      {/* Social Media */}
+      {/* Social */}
       <section className="py-16 bg-primary text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Follow Us</h2>
-          <p className="text-white/70 mb-8">Stay connected through our social media channels</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">{t.home.social.title}</h2>
+          <p className="text-white/70 mb-8">{t.home.social.subtitle}</p>
           <div className="flex justify-center gap-6">
             <a
               href="https://facebook.com"
